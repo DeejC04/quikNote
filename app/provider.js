@@ -1,3 +1,5 @@
+// exports a function with children as arguments to grant session data
+
 'use client'
 
 import { SessionProvider } from "next-auth/react"

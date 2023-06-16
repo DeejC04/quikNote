@@ -1,4 +1,4 @@
-import { NextAuthProvider } from "./providers"
+import { NextAuthProvider } from "./provider"
 
 export const metadata = {
   title: "Create Next App",
