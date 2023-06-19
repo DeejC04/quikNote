@@ -9,6 +9,7 @@ const Header = () => {
     const { data: session, status } = useSession()
     return (
         <div className={styles.main}>
+            <a href={`/`}><h1>QuikNote</h1></a>
             <div>
                 <p> {!session && (
                     <>
@@ -25,14 +26,15 @@ const Header = () => {
                     </>
                 )}
                 </p>
-
+                        
             </div>
 
             {session?.user && (
                 <><div className={styles.userInfo}>
                     {session.user.image && (
 
-                        <span
+                        <a
+                            href={`/profile`}
                             style={{ backgroundImage: `url('${session.user.image}')` }}
                             className={styles.avatar}
                         />

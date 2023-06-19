@@ -4,8 +4,14 @@
     width: 100vw;
     background-color: wheat;
     flex-direction: row;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
+    color: white;
+}
+
+.main a {
+  text-decoration: none;
+  color: black;
 }
 
 .signIn {
@@ -96,3 +102,4 @@
     border-radius: 5px;
     padding: 3px;
   }
+  
