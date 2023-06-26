@@ -13,6 +13,7 @@ export default function RootLayout({ children }) {
       <body>
         <NextAuthProvider>
           <Header />
+          
           {children}
           </NextAuthProvider>
       </body>

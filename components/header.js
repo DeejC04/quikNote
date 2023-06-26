@@ -10,6 +10,7 @@ const Header = () => {
     return (
         <div className={styles.main}>
             
+            <p className={styles.logo}><a className={styles.logoAnchor} href='/'>Q</a></p>
             <div>
                 <p> {!session && (
                     <>
@@ -50,11 +51,12 @@ const Header = () => {
                         />
                     )}
                 </div>
+                
 
                 </>
-
             )}
         </div>
+        
     )
 }
 
