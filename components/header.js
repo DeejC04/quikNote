@@ -9,7 +9,7 @@ const Header = () => {
     const { data: session, status } = useSession()
     return (
         <div className={styles.main}>
-            <a href={`/`}><h1>QuikNote</h1></a>
+            
             <div>
                 <p> {!session && (
                     <>
@@ -19,31 +19,18 @@ const Header = () => {
                                 e.preventDefault()
                                 signIn()
                             }}
-                            className={styles.googleSigninButton}
+                            className={styles.signInButton}
                         >
-                            Sign in
+                            Sign In
                         </a>
                     </>
                 )}
                 </p>
-                        
+
             </div>
 
             {session?.user && (
                 <><div className={styles.userInfo}>
-                    {session.user.image && (
-
-                        <a
-                            href={`/profile`}
-                            style={{ backgroundImage: `url('${session.user.image}')` }}
-                            className={styles.avatar}
-                        />
-                    )}
-
-                    <span>
-                        <p>Signed in as <strong>{session.user.email ?? session.user.name}</strong></p>
-
-                    </span>
                     <a
                         href={`/api/auth/signout`}
                         onClick={(e) => {
@@ -52,14 +39,21 @@ const Header = () => {
                         }}
                         className={styles.signOutButton}
                     >
-                        Sign out
+                        Sign Out
                     </a>
+                    {session.user.image && (
+
+                        <a
+                            href={`/profile`}
+                            style={{ backgroundImage: `url('${session.user.image}')` }}
+                            className={styles.avatar}
+                        />
+                    )}
                 </div>
 
                 </>
 
             )}
-
         </div>
     )
 }
