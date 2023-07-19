@@ -11,7 +11,7 @@ function getCurrentProvider(param) {
 }
 
 const ProviderIcon = () => {
-    const { data, error, isLoading } = useSWR('/api/userinfo', fetcher)
+    const { data, error } = useSWR('/api/userinfo', fetcher)
     if (error) return <div>An error occured.</div>
     if (!data) return <div>Loading ...</div>
 

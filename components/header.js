@@ -8,9 +8,9 @@ import styles from './header.module.css'
 const Header = () => {
     const { data: session, status } = useSession()
     return (
-        <div className={styles.main}>
+        <div className="flex flex-row justify-between ">
             
-            <p className={styles.logo}><a className={styles.logoAnchor} href='/'>Q</a></p>
+            <p className={styles.logo}><a className="border-white border-2 rounded-lg" href='/'>Q</a></p>
             <div>
                 <p> {!session && (
                     <>
@@ -47,7 +47,7 @@ const Header = () => {
                         <a
                             href={`/profile`}
                             style={{ backgroundImage: `url('${session.user.image}')` }}
-                            className={styles.avatar}
+                            className="bg-cover bg-white float-left h-10 w-10"
                         />
                     )}
                 </div>

@@ -7,7 +7,7 @@ const prisma = new PrismaClient;
   
 export async function GET(request) {
     const session = await getServerSession(authOptions)
-
+    
     const user = await prisma.account.findFirst({where: {
         userId: session.user.id
     }})

@@ -5,10 +5,14 @@ import { getProviders, useSession, getSession } from 'next-auth/react'
 import styles from './profile.module.css'
 import { PrismaClient } from '@prisma/client'
 import ProviderIcon from './providerIcon.js'
+import useSWR from 'swr'
+
+const fetcher = url => fetch(url).then(r => r.json())
 
 
 const Profile = () => {
     const { data: session, status } = useSession()
+    const { data, error } = useSWR('/api/userinfo', fetcher)
 
     if (!session) {
         return <div>You are not logged in.</div>
@@ -23,7 +27,7 @@ const Profile = () => {
             <div className={styles.details}>
                 Email: {session?.user.email}
                 <hr></hr>
-                <p>Signed in with <ProviderIcon /></p>
+                <p>Signed in with {data?.user.provider}</p>
                 <hr></hr>
             </div>
         </div>
